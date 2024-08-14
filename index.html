@@ -6,12 +6,12 @@
     <title>Ukrainian Reels Generator</title>
     <style>
         :root {
-            --primary-color: #3D52A0;
-            --secondary-color: #7091E6;
-            --accent-color: #8697C4;
-            --light-accent-color: #ADBBDA;
-            --background-color: #EDE8F5;
-            --text-color: #ffffff;
+            --primary-color: #E43D12; /* Main Red */
+            --secondary-color: #D6536D; /* Pinkish Red */
+            --accent-color: #FFA2B6; /* Light Pink */
+            --highlight-color: #EFB11D; /* Gold */
+            --background-color: #EBE9E1; /* Light Beige */
+            --text-color: #ffffff; /* White */
         }
         
         body, html {
@@ -46,26 +46,8 @@
             font-size: 1.5rem;
         }
 
-        .nav-links a {
-            color: var(--light-accent-color);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-        }
-
-        .cta-button {
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: var(--accent-color);
+        .nav-links {
+            display: none; /* Hide the navigation links */
         }
 
         .main-content {
@@ -85,51 +67,63 @@
             font-size: 1.2rem;
             max-width: 600px;
             margin: 0 auto 2rem;
-            color: var(--accent-color);
+            color: var(--secondary-color);
         }
 
-        .shape {
+        .box-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .box {
+            width: 18%;
+            background-color: var(--accent-color);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .box:nth-child(odd) {
+            background-color: var(--highlight-color); /* Alternate box color */
+        }
+
+        .arrow {
+            width: 4%;
+            height: 50px;
+            background-color: var(--primary-color);
+            border-radius: 25px;
+            transform: rotate(45deg);
+            position: relative;
+        }
+
+        .arrow::before {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
             position: absolute;
-            z-index: -1;
-        }
-
-        .shape-1 {
-            width: 200px;
-            height: 200px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            top: -100px;
-            left: -100px;
-        }
-
-        .shape-2 {
-            width: 150px;
-            height: 150px;
-            background-color: rgba(255, 215, 0, 0.2);
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            bottom: -75px;
-            right: -75px;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            border-radius: 25px;
         }
 
         .app-preview {
-            max-width: 300px;
-            margin: 2rem auto;
-            background-color: var(--light-accent-color);
-            border-radius: 20px;
-            padding: 1rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .app-preview img {
-            width: 100%;
-            border-radius: 10px;
+            display: none; /* Hide the app preview */
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .box-container {
+                flex-direction: column;
             }
-            
+
+            .arrow {
+                display: none; /* Hide arrows on small screens */
+            }
+
             .main-content h1 {
                 font-size: 2rem;
             }
@@ -145,25 +139,23 @@
         <div class="container">
             <nav>
                 <div class="logo">Ukrainian Reels Generator</div>
-                <div class="nav-links">
-                    <a href="#">How It Works</a>
-                    <a href="#">Pricing</a>
-                </div>
-                <div>
-                    <button class="cta-button">Join Now</button>
-                </div>
             </nav>
         </div>
     </header>
     <main class="main-content">
         <div class="container">
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
             <h1>Create Stunning Reels in Minutes</h1>
-            <p>Ukrainian Reels Generator is the first AI-powered app for creating engaging social media reels quickly and easily.</p>
-            <button class="cta-button">Get Started Now</button>
-            <div class="app-preview">
-                <img src="app-preview-placeholder.jpg" alt="Ukrainian Reels Generator App Preview">
+            <p>Enter a prompt with your brilliant idea and have AI take care of scriptwriting, video creation, voice-overs, and subtitle generation.</p>
+            <div class="box-container">
+                <div class="box">Step 1</div>
+                <div class="arrow"></div>
+                <div class="box">Step 2</div>
+                <div class="arrow"></div>
+                <div class="box">Step 3</div>
+                <div class="arrow"></div>
+                <div class="box">Step 4</div>
+                <div class="arrow"></div>
+                <div class="box">Step 5</div>
             </div>
         </div>
     </main>
